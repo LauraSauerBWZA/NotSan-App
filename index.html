@@ -272,6 +272,59 @@
     .hero__eyebrow { display: flex; }
   }
 
+  /* ---------- Desktop-Feinschliff (Mobile ≤820px bleibt unverändert) ---------- */
+  @media (min-width: 821px) {
+    /* breitere Content-Fläche + großzügigere Innenabstände */
+    .shell {
+      max-width: 1600px;
+      padding: clamp(48px, 4.5vw, 76px) clamp(64px, 6vw, 112px) clamp(40px, 4vw, 64px);
+    }
+
+    /* Logo deutlich größer, Wortmarke proportional nachgezogen */
+    .brand { gap: 20px; }
+    .brand__mark { width: clamp(84px, 7vw, 112px); height: clamp(84px, 7vw, 112px); }
+    .brand__name { font-size: clamp(20px, 1.5vw, 24px); }
+    .brand__tag { font-size: 11px; letter-spacing: 0.36em; margin-top: 8px; }
+
+    /* Headline wächst mit der Bildschirmbreite */
+    .hero {
+      margin-top: clamp(56px, 6vw, 96px);
+      gap: clamp(56px, 6vw, 100px);
+    }
+    .hero__copy { max-width: min(62%, 940px); }
+    h1 { font-size: clamp(68px, 6.6vw, 108px); }
+    .lede {
+      font-size: clamp(18px, 1.5vw, 22px);
+      max-width: 640px;
+      margin-top: clamp(24px, 2.4vw, 34px);
+    }
+
+    /* größerer Chevron-Akzent rechts */
+    .cluster .chev {
+      width: clamp(62px, 5.2vw, 92px);
+      height: clamp(150px, 15vw, 226px);
+    }
+
+    /* mehr Luft rund um den Trenner */
+    .divider { margin: clamp(44px, 5vw, 74px) 0 clamp(34px, 3.6vw, 52px); }
+
+    /* Kontaktfelder über die volle Breite auffächern */
+    .contact {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(48px, 4.5vw, 96px);
+    }
+    .field__label { font-size: 11px; margin-bottom: 9px; }
+    .field__value { font-size: clamp(18px, 1.5vw, 22px); }
+
+    /* Social-Links an die äußeren Kanten fächern */
+    .foot {
+      justify-content: space-between;
+      margin-top: clamp(40px, 4.5vw, 72px);
+      padding-top: 30px;
+    }
+    .social { font-size: 15px; }
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     .chev { transition: transform 0.2s ease; }
   }
